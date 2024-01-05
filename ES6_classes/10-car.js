@@ -10,8 +10,8 @@ class Car {
   }
 
   cloneCar() {
-    const stolenCar = new this.constructor(this[_brand], this[_motor], this[_color]);
-    return stolenCar;
+    const cloneCar = new this.constructor(this[_brand], this[_motor], this[_color]);
+    return cloneCar;
   }
 }
 
