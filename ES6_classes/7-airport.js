@@ -9,7 +9,7 @@ class Airport {
   }
 
   get [Symbol.toStringTag]() {
-    return this.constructor.name;
+    return 'Airport';
   }
 }
 
