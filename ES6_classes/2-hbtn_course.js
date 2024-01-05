@@ -37,14 +37,14 @@ export default class HolbertonCourse {
   }
 
   validateNumber(value, attribute) {
-    if (typeof value !== 'number' || isNaN(value)) {
+    if (typeof value !== 'number' || Number.isNaN(value)) {
       throw new TypeError(`${attribute} must be a number`);
     }
     return value;
   }
 
   validateStudentsArray(students) {
-    if (!Array.isArray(students) || students.some(student => typeof student !== 'string')) {
+    if (!Array.isArray(students) || students.some((student) => typeof student !== 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
     return students;
