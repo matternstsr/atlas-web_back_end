@@ -1,15 +1,17 @@
-class Building {
+export default class Building {
   constructor(sqft) {
+    if (!(this instanceof Building) || typeof this.evacuationWarningMessage !== 'function') {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
+
+    if (typeof sqft !== 'number') {
+      throw new TypeError('sqft must be a number');
+    }
+    
     this._sqft = sqft;
   }
 
   get sqft() {
     return this._sqft;
   }
-
-  evacuationWarningMessage() {
-    throw new Error('evacuationWarningMessage method must be implemented in the subclass');
-  }
 }
-
-export default Building;
