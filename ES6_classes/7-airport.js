@@ -5,7 +5,11 @@ class Airport {
   }
 
   toString() {
-    return `[${this._code}]`;
+    return `[${this._code}] { _name: '${this._name}', _code: '${this._code}' }`;
+  }
+
+  get [Symbol.toStringTag]() {
+    return 'Airport';
   }
 }
 
