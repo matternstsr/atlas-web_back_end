@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-disabled-tests */
 export default class HolbertonCourse {
   constructor(name, length, students) {
     this._name = this.validateString(name, 'Name');
@@ -50,3 +51,4 @@ export default class HolbertonCourse {
     return students;
   }
 }
+
