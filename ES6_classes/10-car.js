@@ -14,3 +14,5 @@ class Car {
     return stolenCar;
   }
 }
+
+export default Car;
