@@ -1,8 +1,10 @@
 /*
-  What I found so far:
-  The order of code execution matters, and there's a reference to HolbertonClass before it's defined.
-  In the StudentHolberton constructor, there's a parameter holbertonClass that is not being used properly.
-  The fullStudentDescription getter should reference this instead of self.
+  --What I found so far:
+  --The order of code execution matters, 
+  and there's a reference to HolbertonClass before it's defined.
+  --In the StudentHolberton constructor, 
+  there's a parameter holbertonClass that is not being used properly.
+  --The fullStudentDescription getter should reference this instead of self.
 */
 
 export class HolbertonClass {
