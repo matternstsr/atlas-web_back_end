@@ -9,17 +9,18 @@
 
 export class HolbertonClass {
   constructor(year, location) {
-    this._year = year;
     this._location = location;
+    this._year = year;
+  }
+
+  get location() {
+    return this._location;
   }
 
   get year() {
     return this._year;
   }
 
-  get location() {
-    return this._location;
-  }
 }
 
 export class StudentHolberton {
