@@ -20,7 +20,6 @@ export class HolbertonClass {
   get year() {
     return this._year;
   }
-
 }
 
 export class StudentHolberton {
