@@ -14,3 +14,5 @@ class Car {
     return cloneCar;
   }
 }
+
+export default Car;
