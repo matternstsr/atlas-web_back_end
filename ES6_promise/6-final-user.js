@@ -1,14 +1,11 @@
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  const signUpPromise = signUpUser(firstName, lastName);
-  const uploadPhotoPromise = uploadPhoto(fileName);
-
-  return Promise.allSettled([signUpPromise, uploadPhotoPromise])
-    .then((results) => {
-      return results.map((result, index) => ({
-        status: result.status,
-        value: result.status === 'fulfilled'
-          ? index === 0 ? { firstName, lastName } : result.value
-          : result.reason,
-      }));
-    });
+  return Promise.all([
+    signUpUser(firstName, lastName),
+    uploadPhoto(fileName).catch((error) => error), // Catch the rejection and treat it as a resolved promise
+  ]).then((results) => {
+    return results.map((result, index) => ({
+      status: index === 0 ? 'fulfilled' : 'rejected',
+      value: result,
+    }));
+  });
 }
