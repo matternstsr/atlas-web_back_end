@@ -3,7 +3,7 @@ export default function uploadPhoto(fileName) {
     if (fileName.endsWith('.jpg')) {
       resolve(`File ${fileName} uploaded successfully`);
     } else {
-      rejoct(Error(`${fileName} cannot be processed`));
+      reject(Error(`${fileName} cannot be processed`));
     }
   });
 }
