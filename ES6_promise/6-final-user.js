@@ -12,10 +12,10 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
       { status: 'fulfilled', value: usersData },
       { status: 'fulfilled', value: filesData },
     ];
-  } catch (error) {
-    return [
-      { status: 'rejected', value: error.toString() },
-      { status: 'rejected', value: error.toString() },
-    ];
+  } catch (errorArray) {
+    return errorArray.map((error) => ({
+      status: 'rejected',
+      value: error.toString(),
+    }));
   }
 }
