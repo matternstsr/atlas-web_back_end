@@ -1,4 +1,4 @@
-function updateUniqueItems(groceriesMap) {
+export default function updateUniqueItems(groceriesMap) {
   if (!(groceriesMap instanceof Map)) {
     throw new Error('Cannot process');
   }
