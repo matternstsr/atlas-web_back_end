@@ -20,3 +20,9 @@ export default function loadBalancer(chinaDownload, USDownload) {
     USDownload.then(resolveWrapper).catch(rejectWrapper);
   });
 }
+
+// Same thing as:
+// This demonstartes the power of .race
+// export default function loadBalancer(chinaDownload, USDownload) {
+//   return Promise.race([chinaDownload, USDownload]);
+// }
